@@ -12,9 +12,6 @@ To start the console, navigate to the project directory and run the following co
 
 python console.py
 
-angelscript
-Copy
-
 This will launch the console and display a prompt where you can enter commands.
 
 ### Using the Console
@@ -37,8 +34,6 @@ Here are some examples of how to use the console:
 (hbnb) update User 1234-abcd-5678 email "john@example.com"
 (hbnb) quit
 
-angelscript
-Copy
 
 ## Project Structure
 
