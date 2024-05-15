@@ -29,10 +29,10 @@ The console supports a variety of commands, including:
 Here are some examples of how to use the console:
 
 (hbnb) create User
-(hbnb) show User 1234-abcd-5678
-(hbnb) destroy Place 4321-efgh-9012
+(hbnb) show User Abebe-123
+(hbnb) destroy Place Haile-456
 (hbnb) all
-(hbnb) update User 1234-abcd-5678 email "john@example.com"
+(hbnb) update User Abebe-123 email "abebe@example.com"
 (hbnb) quit
 
 
