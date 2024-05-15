@@ -10,7 +10,8 @@ The project includes a command interpreter, or console, that allows users to int
 
 To start the console, navigate to the project directory and run the following command:
 
-python console.py
+
+```python console.py```
 
 This will launch the console and display a prompt where you can enter commands.
 
