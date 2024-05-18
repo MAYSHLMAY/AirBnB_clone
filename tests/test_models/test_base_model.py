@@ -39,7 +39,7 @@ class TestBaseModel(unittest.TestCase):
         Tests for correct datetime format
         """
         pass
-    
+
     def test_datetime(self):
         """
         Tests for correct datetime format
