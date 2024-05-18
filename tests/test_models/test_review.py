@@ -1,17 +1,25 @@
 #!/usr/bin/python3
-""" testing Review """
+"""
+Test suits for amenities
+"""
+import os
+import models
 import unittest
-import pep8
-from models.review import Review
+from datetime import datetime
+from models.base_model import BaseModel
 
 
-class Review_test(unittest.TestCase):
-    """ check BaseModel """
+class TestReview(unittest.TestCase):
+    """
+    Tests for amenities
+    """
 
-    def pytest(self):
-        """ testing codestyle """
-        pcode = pep8.StyleGuide(quiet=True)
-        path_user = 'models/review.py'
-        result = pcode.check_files([path_user])
-        self.assertEqual(result.total_errors, 0,
-                         "Code Style Errors (and warnings) occured")
+    def test_name(self):
+        """
+        Tests for name inputs
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

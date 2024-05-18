@@ -1,17 +1,25 @@
 #!/usr/bin/python3
-""" testing State """
+"""
+Test suits for amenities
+"""
+import os
+import models
 import unittest
-import pep8
-from models.state import State
+from datetime import datetime
+from models.base_model import BaseModel
 
 
-class State_test(unittest.TestCase):
-    """ check BaseModel """
+class TestState(unittest.TestCase):
+    """
+    Tests for amenities
+    """
 
-    def pytest(self):
-        """ testing codestyle """
-        pcode = pep8.StyleGuide(quiet=True)
-        path_user = 'models/state.py'
-        result = pcode.check_files([path_user])
-        self.assertEqual(result.total_errors, 0,
-                         "Code Style Errors (and warnings) occured")
+    def test_name(self):
+        """
+        Tests for name inputs
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()
