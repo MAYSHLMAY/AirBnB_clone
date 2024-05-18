@@ -4,6 +4,7 @@ import unittest
 import pep8
 from models.user import User
 
+
 class User_test(unittest.TestCase):
     """ check BaseModel """
 

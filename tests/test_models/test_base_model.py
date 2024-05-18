@@ -14,8 +14,8 @@ class BaseModel_test(unittest.TestCase):
         """ testing codestyle """
         pcode = pep8.StyleGuide(quiet=True)
         rest = pcode.check_files(['models/base_model.py',
-                                         'models/__init__.py',
-                                         'models/engine/file_storage.py'])
+                                  'models/__init__.py',
+                                  'models/engine/file_storage.py'])
         self.assertEqual(rest.total_errors, 0,
                          "Code Style Errors (and warnings) occured")
 
@@ -34,20 +34,20 @@ class test_for_base_model(unittest.TestCase):
 
     def test_attr_none(self):
         """None attribute."""
-        object_test = BaseModel(None)
-        self.assertTrue(hasattr(object_test, "id"))
-        self.assertTrue(hasattr(object_test, "created_at"))
-        self.assertTrue(hasattr(object_test, "updated_at"))
+        ob_t = BaseModel(None)
+        self.assertTrue(hasattr(ob_t, "id"))
+        self.assertTrue(hasattr(ob_t, "created_at"))
+        self.assertTrue(hasattr(ob_t, "updated_at"))
 
     def test_kwargs_constructor_2(self):
         """ check id with data """
         dictonary = {'score': 100}
 
-        object_test = BaseModel(**dictonary)
-        self.assertTrue(hasattr(object_test, 'id'))
-        self.assertTrue(hasattr(object_test, 'created_at'))
-        self.assertTrue(hasattr(object_test, 'updated_at'))
-        self.assertTrue(hasattr(object_test, 'score'))
+        ob_t = BaseModel(**dictonary)
+        self.assertTrue(hasattr(ob_t, 'id'))
+        self.assertTrue(hasattr(ob_t, 'created_at'))
+        self.assertTrue(hasattr(ob_t, 'updated_at'))
+        self.assertTrue(hasattr(ob_t, 'score'))
 
     def test_str(self):
         """ Test string """
@@ -58,19 +58,21 @@ class test_for_base_model(unittest.TestCase):
                      'score': 100
                      }
 
-        object_test = BaseModel(**dictonary)
-        out = "[{}] ({}) {}\n".format(type(object_test).__name__, object_test.id, object_test.__dict__)
+        ob_t = BaseModel(**dictonary)
+        out = "[{}] ({}) {}\n".format(type(ob_t).__name__,
+                                      ob_t.id,
+                                      ob_t.__dict__)
 
     def test_to_dict(self):
         """ check dict """
-        object_test = BaseModel(score=300)
-        n_dict = object_test.to_dict()
+        ob_t = BaseModel(score=300)
+        n_dict = ob_t.to_dict()
 
-        self.assertEqual(n_dict['id'], object_test.id)
+        self.assertEqual(n_dict['id'], ob_t.id)
         self.assertEqual(n_dict['score'], 300)
         self.assertEqual(n_dict['__class__'], 'BaseModel')
-        self.assertEqual(n_dict['created_at'], object_test.created_at.isoformat())
-        self.assertEqual(n_dict['updated_at'], object_test.updated_at.isoformat())
+        self.assertEqual(n_dict['created_at'], ob_t.created_at.isoformat())
+        self.assertEqual(n_dict['updated_at'], ob_t.updated_at.isoformat())
 
         self.assertEqual(type(n_dict['created_at']), str)
         self.assertEqual(type(n_dict['created_at']), str)

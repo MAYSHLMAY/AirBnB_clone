@@ -4,6 +4,7 @@ import unittest
 import pep8
 from models.place import Place
 
+
 class Place_test(unittest.TestCase):
     """ check BaseModel """
 

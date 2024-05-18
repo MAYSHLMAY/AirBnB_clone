@@ -4,6 +4,7 @@ import unittest
 import pep8
 from models.state import State
 
+
 class State_test(unittest.TestCase):
     """ check BaseModel """
 
