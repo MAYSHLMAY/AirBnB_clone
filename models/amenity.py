@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-""" Class Amenity """
+"""
+Amenity class, a subclass of BaseModel
+"""
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """Amenity class that inherits BaseModel"""
+    """
+    A subclass of BaseModel class
+    Public class attribute:
+        name: (str)
+    """
     name = ""
