@@ -2,8 +2,6 @@
 """
 Test suits for amenities
 """
-import os
-import models
 import unittest
 from datetime import datetime
 from models.base_model import BaseModel

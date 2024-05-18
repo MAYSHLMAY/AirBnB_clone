@@ -3,10 +3,6 @@
 Test suits for the base model
 """
 
-import os
-import re
-import json
-import uuid
 import unittest
 from time import sleep
 from datetime import datetime
