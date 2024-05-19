@@ -190,8 +190,8 @@ class TestPlace_save(unittest.TestCase):
         pl = Place()
         pl.save()
         plid = "Place." + pl.id
-        with open("file.json", "r") as file:
-            self.assertIn(plid, file.read())
+        with open("file.json", "r") as f:
+            self.assertIn(plid, f.read())
 
 
 class TestPlace_to_dict(unittest.TestCase):
