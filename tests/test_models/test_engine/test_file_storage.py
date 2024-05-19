@@ -29,13 +29,13 @@ class TFS(unittest.TestCase):
         with self.assertRaises(TypeError):
             FileStorage(None)
 
-    def test_FileStorage_file_path_is_private_str(self):
+    def tfsoips(self):
         self.assertEqual(str, type(FileStorage._FileStorage__fp))
 
-    def testFileStorage_objects_is_private_dict(self):
+    def tfsoipdict(self):
         self.assertEqual(dict, type(FileStorage._FileStorage__objects))
 
-    def test_storage_initializes(self):
+    def ts_init(self):
         self.assertEqual(type(models.cont), FileStorage)
 
 
@@ -43,14 +43,14 @@ class TestFileStorage_methods(unittest.TestCase):
     """Unittests for testing methods of the FileStorage class."""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
             pass
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:

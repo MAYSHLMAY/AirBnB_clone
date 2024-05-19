@@ -27,12 +27,12 @@ class TestHBNBCommand_prompting(unittest.TestCase):
     """Unittests for testing prompting of the HBNB command interpreter."""
 
     @classmethod
-    def setUpClass(self):
+    def in_UpClass(self):
         """Set up test"""
         self.typing = console.HBNBCommand()
 
     @classmethod
-    def tearDownClass(self):
+    def sep_DClass(self):
         """Remove temporary file (file.json) created as a result"""
         try:
             os.remove("file.json")
@@ -127,7 +127,7 @@ class TestHBNBCommand_create(unittest.TestCase):
     """Unittests for testing create from the HBNB command interpreter."""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
@@ -135,7 +135,7 @@ class TestHBNBCommand_create(unittest.TestCase):
         FileStorage.__objects = {}
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:
@@ -209,7 +209,7 @@ class TestHBNBCommand_show(unittest.TestCase):
     """Unittests for testing show from the HBNB command interpreter"""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
@@ -217,7 +217,7 @@ class TestHBNBCommand_show(unittest.TestCase):
         FileStorage.__objects = {}
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:
@@ -461,7 +461,7 @@ class TestHBNBCommand_destroy(unittest.TestCase):
     """Unittests for testing destroy from the HBNB command interpreter."""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
@@ -469,7 +469,7 @@ class TestHBNBCommand_destroy(unittest.TestCase):
         FileStorage.__objects = {}
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:
@@ -715,7 +715,7 @@ class TestHBNBCommand_all(unittest.TestCase):
     """Unittests for testing all of the HBNB command interpreter."""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
@@ -723,7 +723,7 @@ class TestHBNBCommand_all(unittest.TestCase):
         FileStorage.__objects = {}
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:
@@ -843,7 +843,7 @@ class TestHBNBCommand_update(unittest.TestCase):
     """Unittests for testing update from the HBNB command interpreter."""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
@@ -851,7 +851,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         FileStorage.__objects = {}
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:
@@ -1095,7 +1095,7 @@ class TestHBNBCommand_count(unittest.TestCase):
     """Unittests for testing count method of HBNB comand interpreter."""
 
     @classmethod
-    def setUp(self):
+    def in_Up(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
@@ -1103,7 +1103,7 @@ class TestHBNBCommand_count(unittest.TestCase):
         FileStorage._FileStorage__objects = {}
 
     @classmethod
-    def tearDown(self):
+    def sep_D(self):
         try:
             os.remove("file.json")
         except IOError:
