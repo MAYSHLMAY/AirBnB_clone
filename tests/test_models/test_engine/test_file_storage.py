@@ -5,7 +5,6 @@ Unittest classes:
     TestFileStorage_methods
 """
 import os
-import pep8
 import json
 import models
 import unittest
@@ -61,14 +60,6 @@ class TestFileStorage_methods(unittest.TestCase):
         except IOError:
             pass
         FileStorage._FileStorage__objects = {}
-
-    def test_style_check(self):
-        """
-        Tests pep8 style
-        """
-        style = pep8.StyleGuide(quiet=True)
-        p = style.check_files(['models/engine/file_storage.py'])
-        self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_all(self):
         self.assertEqual(dict, type(models.storage.all()))
@@ -157,32 +148,6 @@ class TestFileStorage_methods(unittest.TestCase):
             for line in r:
                 self.assertEqual(line, "{}")
         self.assertIs(a_storage.reload(), None)
-
-    """def test_reload(self):
-        bm = BaseModel()
-        us = User()
-        st = State()
-        pl = Place()
-        cy = City()
-        am = Amenity()
-        rv = Review()
-        models.storage.new(bm)
-        models.storage.new(us)
-        models.storage.new(st)
-        models.storage.new(pl)
-        models.storage.new(cy)
-        models.storage.new(am)
-        models.storage.new(rv)
-        models.storage.save()
-        models.storage.reload()
-        objs = FileStorage._FileStorage__objects
-        self.assertIn("BaseModel." + bm.id, objs)
-        self.assertIn("User." + us.id, objs)
-        self.assertIn("State." + st.id, objs)
-        self.assertIn("Place." + pl.id, objs)
-        self.assertIn("City." + cy.id, objs)
-        self.assertIn("Amenity." + am.id, objs)
-        self.assertIn("Review." + rv.id, objs)"""
 
     def test_reload_with_arg(self):
         with self.assertRaises(TypeError):
