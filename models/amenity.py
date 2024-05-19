@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Amenity class, a subclass of BaseModel
+Amenity class, a subcls of BaseModel
 """
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
     """
-    A subclass of BaseModel class
+    A subcls of BaseModel class
     Public class attribute:
         name: (str)
     """

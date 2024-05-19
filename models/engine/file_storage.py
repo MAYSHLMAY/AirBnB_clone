@@ -20,7 +20,7 @@ class FileStorage:
         save: Serializes objects into JSON
         reload: Deserializes JSON into objects
 
-    Class Attributes:
+    Class attrs:
         __fp (str): The file to save objects to.
         __o (dict): A dictionary of instantiated objects.
         cd (dict): A dictionary of all the classes.

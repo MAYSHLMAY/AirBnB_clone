@@ -159,14 +159,14 @@ class TestReview_to_dict(unittest.TestCase):
         self.assertIn("updated_at", rv.to_dict())
         self.assertIn("__class__", rv.to_dict())
 
-    def test_to_dict_contains_added_attributes(self):
+    def test_to_dict_contains_added_attrs(self):
         rv = Review()
         rv.middle_name = "Holberton"
         rv.my_number = 98
         self.assertEqual("Holberton", rv.middle_name)
         self.assertIn("my_number", rv.to_dict())
 
-    def test_to_dict_datetime_attributes_are_strs(self):
+    def test_to_dict_datetime_attrs_are_strs(self):
         rv = Review()
         rv_dict = rv.to_dict()
         self.assertEqual(str, type(rv_dict["id"]))

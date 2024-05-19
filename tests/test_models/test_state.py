@@ -147,14 +147,14 @@ class TestState_to_dict(unittest.TestCase):
         self.assertIn("updated_at", st.to_dict())
         self.assertIn("__class__", st.to_dict())
 
-    def test_to_dict_contains_added_attributes(self):
+    def test_to_dict_contains_added_attrs(self):
         st = State()
         st.middle_name = "Holberton"
         st.my_number = 98
         self.assertEqual("Holberton", st.middle_name)
         self.assertIn("my_number", st.to_dict())
 
-    def test_to_dict_datetime_attributes_are_strs(self):
+    def test_to_dict_datetime_attrs_are_strs(self):
         st = State()
         st_dict = st.to_dict()
         self.assertEqual(str, type(st_dict["id"]))

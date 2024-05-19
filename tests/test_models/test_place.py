@@ -207,14 +207,14 @@ class TestPlace_to_dict(unittest.TestCase):
         self.assertIn("updated_at", pl.to_dict())
         self.assertIn("__class__", pl.to_dict())
 
-    def test_to_dict_contains_added_attributes(self):
+    def test_to_dict_contains_added_attrs(self):
         pl = Place()
         pl.middle_name = "Holberton"
         pl.my_number = 98
         self.assertEqual("Holberton", pl.middle_name)
         self.assertIn("my_number", pl.to_dict())
 
-    def test_to_dict_datetime_attributes_are_strs(self):
+    def test_to_dict_datetime_attrs_are_strs(self):
         pl = Place()
         pl_dict = pl.to_dict()
         self.assertEqual(str, type(pl_dict["id"]))

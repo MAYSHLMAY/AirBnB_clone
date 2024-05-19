@@ -4,12 +4,12 @@ from uuid import uuid4
 import models
 
 """
-Parent class to all classes in the AirBnB clone project
+P class to all classes in the AirBnB clone project
 """
 
 
 class BaseModel():
-    """Parent class for AirBnB clone project
+    """P class for AirBnB clone project
     Methods:
         __init__(self, *args, **kwargs)
         __str__(self)
@@ -20,7 +20,7 @@ class BaseModel():
 
     def __init__(self, *args, **kwargs):
         """
-        Initialize attributes: uuid4, dates when class was created/updated
+        Initialize attrs: uuid4, dates when class was created/updated
         """
         date_format = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:

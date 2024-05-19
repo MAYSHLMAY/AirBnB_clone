@@ -148,14 +148,14 @@ class TestAmenity_to_dict(unittest.TestCase):
         self.assertIn("updated_at", am.to_dict())
         self.assertIn("__class__", am.to_dict())
 
-    def test_to_dict_contains_added_attributes(self):
+    def test_to_dict_contains_added_attrs(self):
         am = Amenity()
         am.middle_name = "Holberton"
         am.my_number = 98
         self.assertEqual("Holberton", am.middle_name)
         self.assertIn("my_number", am.to_dict())
 
-    def test_to_dict_datetime_attributes_are_strs(self):
+    def test_to_dict_datetime_attrs_are_strs(self):
         am = Amenity()
         am_dict = am.to_dict()
         self.assertEqual(str, type(am_dict["id"]))

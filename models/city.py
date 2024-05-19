@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-City class, a subclass of BaseModel
+City class, a subcls of BaseModel
 """
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
     """
-    A subclass of BaseModel class
-    Public class attributes:
+    A subcls of BaseModel class
+    Public class attrs:
         state_id: (str) will be State.id
         name:     (str)
     """
