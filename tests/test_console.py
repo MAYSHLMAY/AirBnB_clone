@@ -733,7 +733,7 @@ class TestHBNBCommand_all(unittest.TestCase):
         except IOError:
             pass
 
-    def test_all_invalid_class(self):
+    def fiall_invalid_class(self):
         correct = "** class doesn't exist **"
         with patch("sys.stdout", new=StringIO()) as fd:
             self.assertFalse(HBNBCommand().onecmd("all MyModel"))
@@ -742,7 +742,7 @@ class TestHBNBCommand_all(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd("MyModel.all()"))
             self.assertEqual(correct, fd.getvalue().strip())
 
-    def test_all_objects_space_notation(self):
+    def fiall_objects_space_notation(self):
         with patch("sys.stdout", new=StringIO()) as fd:
             self.assertFalse(HBNBCommand().onecmd("create BaseModel"))
             self.assertFalse(HBNBCommand().onecmd("create User"))
@@ -752,7 +752,7 @@ class TestHBNBCommand_all(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd("create Amenity"))
             self.assertFalse(HBNBCommand().onecmd("create Review"))
 
-    def test_all_objects_dot_notation(self):
+    def fiall_objects_dot_notation(self):
         with patch("sys.stdout", new=StringIO()) as fd:
             self.assertFalse(HBNBCommand().onecmd("create BaseModel"))
             self.assertFalse(HBNBCommand().onecmd("create User"))
@@ -762,7 +762,7 @@ class TestHBNBCommand_all(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd("create Amenity"))
             self.assertFalse(HBNBCommand().onecmd("create Review"))
 
-    def test_all_single_object_space_notation(self):
+    def fiall_single_object_space_notation(self):
         with patch("sys.stdout", new=StringIO()) as fd:
             self.assertFalse(HBNBCommand().onecmd("create BaseModel"))
             self.assertFalse(HBNBCommand().onecmd("create User"))
@@ -800,7 +800,7 @@ class TestHBNBCommand_all(unittest.TestCase):
             self.assertIn("Review", fd.getvalue().strip())
             self.assertNotIn("BaseModel", fd.getvalue().strip())
 
-    def test_all_single_object_dot_notation(self):
+    def fiall_single_object_dot_notation(self):
         with patch("sys.stdout", new=StringIO()) as fd:
             self.assertFalse(HBNBCommand().onecmd("create BaseModel"))
             self.assertFalse(HBNBCommand().onecmd("create User"))

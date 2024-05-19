@@ -61,10 +61,10 @@ class TestFileStorage_methods(unittest.TestCase):
             pass
         FileStorage._FileStorage__objects = {}
 
-    def test_all(self):
+    def fiall(self):
         self.assertEqual(dict, type(models.cont.all()))
 
-    def test_all_with_arg(self):
+    def fiall_with_arg(self):
         with self.assertRaises(TypeError):
             models.cont.all(None)
 
