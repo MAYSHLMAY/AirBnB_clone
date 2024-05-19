@@ -13,28 +13,28 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-def parse(arg):
-    curly_braces = re.search(r"\{(.*?)\}", arg)
-    brackets = re.search(r"\[(.*?)\]", arg)
-    if curly_braces is None:
-        if brackets is None:
+def pd(arg):
+    cb = re.search(r"\{(.*?)\}", arg)
+    bcs = re.search(r"\[(.*?)\]", arg)
+    if cb is None:
+        if bcs is None:
             return [i.strip(",") for i in split(arg)]
         else:
-            lexer = split(arg[:brackets.span()[0]])
-            retl = [i.strip(",") for i in lexer]
-            retl.append(brackets.group())
+            le = split(arg[:bcs.span()[0]])
+            retl = [i.strip(",") for i in le]
+            retl.append(bcs.group())
             return retl
     else:
-        lexer = split(arg[:curly_braces.span()[0]])
-        retl = [i.strip(",") for i in lexer]
-        retl.append(curly_braces.group())
+        le = split(arg[:cb.span()[0]])
+        retl = [i.strip(",") for i in le]
+        retl.append(cb.group())
         return retl
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the HolbertonBnB command interpreter.
+    """Defines the HolbertonBnB cmd interpreter.
     attrs:
-        prompt (str): The command prompt.
+        prompt (str): The cmd prompt.
     """
 
     prompt = "(hbnb) "
@@ -61,20 +61,20 @@ class HBNBCommand(cmd.Cmd):
             "count": self.do_count,
             "update": self.do_update
         }
-        match = re.search(r"\.", arg)
-        if match is not None:
-            argl = [arg[:match.span()[0]], arg[match.span()[1]:]]
-            match = re.search(r"\((.*?)\)", argl[1])
-            if match is not None:
-                command = [argl[1][:match.span()[0]], match.group()[1:-1]]
-                if command[0] in argdict.keys():
-                    call = "{} {}".format(argl[0], command[1])
-                    return argdict[command[0]](call)
+        mch = re.search(r"\.", arg)
+        if mch is not None:
+            argl = [arg[:mch.span()[0]], arg[mch.span()[1]:]]
+            mch = re.search(r"\((.*?)\)", argl[1])
+            if mch is not None:
+                cmd = [argl[1][:mch.span()[0]], mch.group()[1:-1]]
+                if cmd[0] in argdict.keys():
+                    call = "{} {}".format(argl[0], cmd[1])
+                    return argdict[cmd[0]](call)
         print("*** Unknown syntax: {}".format(arg))
         return False
 
     def do_quit(self, arg):
-        """Quit command to exit the program.
+        """Quit cmd to exit the program.
 
         """
         return True
@@ -122,7 +122,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage: show <class> <id> or <class>.show(<id>)
         Display the string representation of a class instance of a given id.
         """
-        argl = parse(arg)
+        argl = pd(arg)
         objdict = cont.all()
         if len(argl) == 0:
             print("** class name missing **")
@@ -138,7 +138,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Delete a class instance of a given id."""
-        argl = parse(arg)
+        argl = pd(arg)
         objdict = cont.all()
         if len(argl) == 0:
             print("** class name missing **")
@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage: all or all <class> or <class>.all()
         Display string representations of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
-        argl = parse(arg)
+        argl = pd(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
@@ -171,7 +171,7 @@ class HBNBCommand(cmd.Cmd):
     def do_count(self, arg):
         """Usage: count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
-        argl = parse(arg)
+        argl = pd(arg)
         count = 0
         for obj in cont.all().values():
             if argl[0] == obj.__class__.__name__:
@@ -181,7 +181,7 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Usage: update <class> <id> <attribute_name> <attribute_value>
         Update a class instance of key/value pair or dict."""
-        argl = parse(arg)
+        argl = pd(arg)
         objdict = cont.all()
 
         if len(argl) == 0:

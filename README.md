@@ -4,11 +4,11 @@ This project is a clone of the popular vacation rental platform, AirBnB. It is a
 
 ## The Console
 
-The project includes a command interpreter, or console, that allows users to interact with the application's data. The console can be used to create, update, destroy, and query various objects, such as users, places, reviews, and more.
+The project includes a cmd interpreter, or console, that allows users to interact with the application's data. The console can be used to create, update, destroy, and query various objects, such as users, places, reviews, and more.
 
 ### Starting the Console
 
-To start the console, navigate to the project directory and run the following command:
+To start the console, navigate to the project directory and run the following cmd:
 
 
 ```python console.py or ./console.py```
