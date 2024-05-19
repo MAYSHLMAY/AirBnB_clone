@@ -147,13 +147,13 @@ class TestPlace_save(unittest.TestCase):
     """Unittests for testing save method of the Place class."""
 
     @classmethod
-    def in_Up(self):
+    def setUp(self):
         try:
             os.rename("file.json", "tmp")
         except IOError:
             pass
 
-    def sep_D(self):
+    def tearDown(self):
         try:
             os.remove("file.json")
         except IOError:
