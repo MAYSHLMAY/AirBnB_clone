@@ -22,15 +22,15 @@ class BaseModel():
         """
         Initialize attrs: uuid4, dates when class was created/updated
         """
-        date_format = '%Y-%m-%dT%H:%M:%S.%f'
+        d_form = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
                 if "created_at" == key:
                     self.created_at = datetime.strptime(kwargs["created_at"],
-                                                        date_format)
+                                                        d_form)
                 elif "updated_at" == key:
                     self.updated_at = datetime.strptime(kwargs["updated_at"],
-                                                        date_format)
+                                                        d_form)
                 elif "__class__" == key:
                     pass
                 else:

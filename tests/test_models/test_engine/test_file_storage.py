@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines unittests for models/engine/file_storage.py.
 Unittest classes:
-    TestFileStorage_instantiation
+    TFS
     TestFileStorage_methods
 """
 import os
@@ -19,13 +19,13 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-class TestFileStorage_instantiation(unittest.TestCase):
+class TFS(unittest.TestCase):
     """Unittests for testing instantiation of the FileStorage class."""
 
-    def test_FileStorage_instantiation_no_args(self):
+    def tfs_no_args(self):
         self.assertEqual(type(FileStorage()), FileStorage)
 
-    def test_FileStorage_instantiation_with_arg(self):
+    def tfs_with_arg(self):
         with self.assertRaises(TypeError):
             FileStorage(None)
 
