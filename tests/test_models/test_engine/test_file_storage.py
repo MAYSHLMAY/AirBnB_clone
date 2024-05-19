@@ -31,10 +31,10 @@ class TestFileStorage_instantiation(unittest.TestCase):
             FileStorage(None)
 
     def test_FileStorage_file_path_is_private_str(self):
-        self.assertEqual(str, type(FileStorage._FileStorage__file_path))
+        self.assertEqual(str, type(FileStorage._FileStorage__f_path))
 
     def testFileStorage_objects_is_private_dict(self):
-        self.assertEqual(dict, type(FileStorage._FileStorage__objects))
+        self.assertEqual(dict, type(FileStorage._FileStorage_objs))
 
     def test_storage_initializes(self):
         self.assertEqual(type(models.storage), FileStorage)
@@ -60,7 +60,7 @@ class TestFileStorage_methods(unittest.TestCase):
             os.rename("tmp", "file.json")
         except IOError:
             pass
-        FileStorage._FileStorage__objects = {}
+        FileStorage._FileStorage_objs = {}
 
     def test_style_check(self):
         """
@@ -128,8 +128,8 @@ class TestFileStorage_methods(unittest.TestCase):
         models.storage.new(rv)
         models.storage.save()
         save_text = ""
-        with open("file.json", "r") as f:
-            save_text = f.read()
+        with open("file.json", "r") as file:
+            save_text = file.read()
             self.assertIn("BaseModel." + bm.id, save_text)
             self.assertIn("User." + us.id, save_text)
             self.assertIn("State." + st.id, save_text)
@@ -151,8 +151,8 @@ class TestFileStorage_methods(unittest.TestCase):
             os.remove("file.json")
         except FileNotFoundError:
             pass
-        with open("file.json", "w") as f:
-            f.write("{}")
+        with open("file.json", "w") as file:
+            file.write("{}")
         with open("file.json", "r") as r:
             for line in r:
                 self.assertEqual(line, "{}")
@@ -175,7 +175,7 @@ class TestFileStorage_methods(unittest.TestCase):
         models.storage.new(rv)
         models.storage.save()
         models.storage.reload()
-        objs = FileStorage._FileStorage__objects
+        objs = FileStorage._FileStorage_objs
         self.assertIn("BaseModel." + bm.id, objs)
         self.assertIn("User." + us.id, objs)
         self.assertIn("State." + st.id, objs)

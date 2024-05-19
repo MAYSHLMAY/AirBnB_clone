@@ -179,11 +179,8 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def do_update(self, arg):
-        """Usage: update <class> <id> <attribute_name> <attribute_value> or
-       <class>.update(<id>, <attribute_name>, <attribute_value>) or
-       <class>.update(<id>, <dictionary>)
-        Update a class instance of a given id by adding or updating
-        a given attribute key/value pair or dictionary."""
+        """Usage: update <class> <id> <attribute_name> <attribute_value>
+        Update a class instance of key/value pair or dict."""
         argl = parse(arg)
         objdict = storage.all()
 

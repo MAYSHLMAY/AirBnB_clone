@@ -142,8 +142,8 @@ class TestReview_save(unittest.TestCase):
         rv = Review()
         rv.save()
         rvid = "Review." + rv.id
-        with open("file.json", "r") as f:
-            self.assertIn(rvid, f.read())
+        with open("file.json", "r") as file:
+            self.assertIn(rvid, file.read())
 
 
 class TestReview_to_dict(unittest.TestCase):

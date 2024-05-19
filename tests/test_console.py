@@ -157,7 +157,7 @@ class TestHBNBCommand_create(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-        FileStorage.__objects = {}
+        FileStorage._objs = {}
 
     @classmethod
     def tearDown(self):
@@ -239,7 +239,7 @@ class TestHBNBCommand_show(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-        FileStorage.__objects = {}
+        FileStorage._objs = {}
 
     @classmethod
     def tearDown(self):
@@ -492,7 +492,7 @@ class TestHBNBCommand_destroy(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-        FileStorage.__objects = {}
+        FileStorage._objs = {}
 
     @classmethod
     def tearDown(self):
@@ -746,7 +746,7 @@ class TestHBNBCommand_all(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-        FileStorage.__objects = {}
+        FileStorage._objs = {}
 
     @classmethod
     def tearDown(self):
@@ -874,7 +874,7 @@ class TestHBNBCommand_update(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-        FileStorage.__objects = {}
+        FileStorage._objs = {}
 
     @classmethod
     def tearDown(self):
@@ -1126,7 +1126,7 @@ class TestHBNBCommand_count(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-        FileStorage._FileStorage__objects = {}
+        FileStorage._FileStorage_objs = {}
 
     @classmethod
     def tearDown(self):
