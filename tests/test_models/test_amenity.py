@@ -20,7 +20,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):
-        self.assertIn(Amenity(), models.storage.all().values())
+        self.assertIn(Amenity(), models.cont.all().values())
 
     def test_id_is_public_str(self):
         self.assertEqual(str, type(Amenity().id))

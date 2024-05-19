@@ -20,7 +20,7 @@ class TestPlace_instantiation(unittest.TestCase):
         self.assertEqual(Place, type(Place()))
 
     def test_new_instance_stored_in_objects(self):
-        self.assertIn(Place(), models.storage.all().values())
+        self.assertIn(Place(), models.cont.all().values())
 
     def test_id_is_public_str(self):
         self.assertEqual(str, type(Place().id))

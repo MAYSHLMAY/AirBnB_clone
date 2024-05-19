@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''AirBnB clone project File Storage'''
+'''AirBnB clone project File cont'''
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -12,7 +12,7 @@ from models.review import Review
 
 class FileStorage:
     """
-    Storage engine for AirBnB clone project.
+    cont engine for AirBnB clone project.
 
     Class Methods:
         all: Returns the object

@@ -20,7 +20,7 @@ class TestState_instantiation(unittest.TestCase):
         self.assertEqual(State, type(State()))
 
     def test_new_instance_stored_in_objects(self):
-        self.assertIn(State(), models.storage.all().values())
+        self.assertIn(State(), models.cont.all().values())
 
     def test_id_is_public_str(self):
         self.assertEqual(str, type(State().id))

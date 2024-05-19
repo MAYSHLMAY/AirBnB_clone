@@ -39,7 +39,7 @@ class BaseModel():
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
+            models.cont.new(self)
 
     def __str__(self):
         """
@@ -62,7 +62,7 @@ class BaseModel():
         - save to serialized file
         """
         self.updated_at = datetime.now()
-        models.storage.save()
+        models.cont.save()
 
     def to_dict(self):
         """

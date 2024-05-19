@@ -3,7 +3,7 @@
 import cmd
 import re
 from shlex import split
-from models import storage
+from models import cont
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
                 obj = eval(my_list[0])()
             else:
                 obj = eval(my_list[0])(**kwargs)
-                storage.new(obj)
+                cont.new(obj)
             print(obj.id)
             obj.save()
 
@@ -123,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
         Display the string representation of a class instance of a given id.
         """
         argl = parse(arg)
-        objdict = storage.all()
+        objdict = cont.all()
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
@@ -139,7 +139,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Delete a class instance of a given id."""
         argl = parse(arg)
-        objdict = storage.all()
+        objdict = cont.all()
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
@@ -150,7 +150,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del objdict["{}.{}".format(argl[0], argl[1])]
-            storage.save()
+            cont.save()
 
     def do_all(self, arg):
         """Usage: all or all <class> or <class>.all()
@@ -161,7 +161,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             objl = []
-            for obj in storage.all().values():
+            for obj in cont.all().values():
                 if len(argl) > 0 and argl[0] == obj.__class__.__name__:
                     objl.append(obj.__str__())
                 elif len(argl) == 0:
@@ -173,7 +173,7 @@ class HBNBCommand(cmd.Cmd):
         Retrieve the number of instances of a given class."""
         argl = parse(arg)
         count = 0
-        for obj in storage.all().values():
+        for obj in cont.all().values():
             if argl[0] == obj.__class__.__name__:
                 count += 1
         print(count)
@@ -182,7 +182,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage: update <class> <id> <attribute_name> <attribute_value>
         Update a class instance of key/value pair or dict."""
         argl = parse(arg)
-        objdict = storage.all()
+        objdict = cont.all()
 
         if len(argl) == 0:
             print("** class name missing **")
@@ -222,7 +222,7 @@ class HBNBCommand(cmd.Cmd):
                     obj.__dict__[k] = valtype(v)
                 else:
                     obj.__dict__[k] = v
-        storage.save()
+        cont.save()
 
 
 if __name__ == "__main__":
