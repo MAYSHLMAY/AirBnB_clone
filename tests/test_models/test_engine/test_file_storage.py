@@ -30,7 +30,7 @@ class TFS(unittest.TestCase):
             FileStorage(None)
 
     def tfsoips(self):
-        self.assertEqual(str, type(FileStorage._FileStorage__fp))
+        self.assertEqual(str, type(FileStorage._FileStorage__file_path))
 
     def tfsoipdict(self):
         self.assertEqual(dict, type(FileStorage._FileStorage__objects))

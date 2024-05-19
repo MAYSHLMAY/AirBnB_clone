@@ -21,43 +21,43 @@ class FileStorage:
         reload: Deserializes JSON into objects
 
     Class attrs:
-        __fp (str): The file to save objects to.
-        __o (dict): A dictionary of instantiated objects.
+        __file_path (str): The file to save objects to.
+        __objects (dict): A dictionary of instantiated objects.
         cd (dict): A dictionary of all the classes.
     """
 
-    __fp = 'file.json'
-    __o = {}
+    __file_path = 'file.json'
+    __objects = {}
     cd = {"BaseModel": BaseModel, "User": User, "Place": Place,
           "Amenity": Amenity, "City": City, "Review": Review,
           "State": State}
 
     def all(self):
         '''Return dictionary of <class>.<id> : object instance'''
-        return self.__o
+        return self.__objects
 
     def new(self, obj):
-        '''Set new __o to existing dictionary of instances'''
+        '''Set new __objects to existing dictionary of instances'''
         if obj:
             k = f"{obj.__class__.__name__}.{obj.id}"
-            self.__o[k] = obj
+            self.__objects[k] = obj
 
     def save(self):
         """Save/serialize obj dictionaries to json file"""
         od = {}
 
-        for k, o in self.__o.items():
+        for k, o in self.__objects.items():
             od[k] = o.to_dict()
-        with open(self.__fp, 'w', encoding="UTF-8") as f:
+        with open(self.__file_path, 'w', encoding="UTF-8") as f:
             json.dump(od, f)
 
     def reload(self):
         """Deserialize obj dicts back to instances, if it exists"""
         try:
-            with open(self.__fp, 'r', encoding="UTF-8") as f:
+            with open(self.__file_path, 'r', encoding="UTF-8") as f:
                 nod = json.load(f)
             for k, v in nod.items():
                 o = self.cd[v['__class__']](**v)
-                self.__o[k] = o
+                self.__objects[k] = o
         except FileNotFoundError:
             pass
