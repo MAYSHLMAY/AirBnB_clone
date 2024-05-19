@@ -11,14 +11,17 @@ from models.review import Review
 
 
 class FileStorage:
-    """ This is a storage engine for AirBnB clone project
+    """
+    Storage engine for AirBnB clone project.
+
     Class Methods:
         all: Returns the object
-        new: updates the dictionary id
-        save: Serializes, or converts Python objects into JSON strings
-        reload: Deserializes, or converts JSON strings into Python objects.
+        new: Updates the dictionary id
+        save: Serializes objects into JSON
+        reload: Deserializes JSON into objects
+
     Class Attributes:
-        __file_path (str): The name of the file to save objects to.
+        __file_path (str): The file to save objects to.
         __objects (dict): A dictionary of instantiated objects.
         class_dict (dict): A dictionary of all the classes.
     """
@@ -36,7 +39,7 @@ class FileStorage:
     def new(self, obj):
         '''Set new __objects to existing dictionary of instances'''
         if obj:
-            key = '{}.{}'.format(obj.__class__.__name__, obj.id)
+            key = 'f{obj.__class__.__name__}.{obj.id}'
             self.__objects[key] = obj
 
     def save(self):
