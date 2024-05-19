@@ -133,8 +133,8 @@ class TestPlace_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        ple = Place(id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(ple.id, "345")
+        ple = Place(id="112", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(ple.id, "112")
         self.assertEqual(ple.created_at, dt)
         self.assertEqual(ple.updated_at, dt)
 
@@ -209,9 +209,9 @@ class TestPlace_to_dict(unittest.TestCase):
 
     def test_to_dict_contains_added_attrs(self):
         ple = Place()
-        ple.middle_name = "Holberton"
+        ple.middle_name = "ALX"
         ple.my_number = 98
-        self.assertEqual("Holberton", ple.middle_name)
+        self.assertEqual("ALX", ple.middle_name)
         self.assertIn("my_number", ple.to_dict())
 
     def test_to_dict_datetime_attrs_are_strs(self):

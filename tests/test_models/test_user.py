@@ -79,8 +79,8 @@ class TestUser_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        usr = User(id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(usr.id, "345")
+        usr = User(id="112", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(usr.id, "112")
         self.assertEqual(usr.created_at, dt)
         self.assertEqual(usr.updated_at, dt)
 
@@ -155,9 +155,9 @@ class TestUser_to_dict(unittest.TestCase):
 
     def test_to_dict_contains_added_attrs(self):
         usr = User()
-        usr.middle_name = "Holberton"
+        usr.middle_name = "ALX"
         usr.my_number = 98
-        self.assertEqual("Holberton", usr.middle_name)
+        self.assertEqual("ALX", usr.middle_name)
         self.assertIn("my_number", usr.to_dict())
 
     def test_to_dict_datetime_attrs_are_strs(self):

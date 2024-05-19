@@ -67,8 +67,8 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        ba_m = BaseModel(id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(ba_m.id, "345")
+        ba_m = BaseModel(id="112", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(ba_m.id, "112")
         self.assertEqual(ba_m.created_at, dt)
         self.assertEqual(ba_m.updated_at, dt)
 
@@ -79,8 +79,8 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_with_args_and_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        ba_m = BaseModel("12", id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(ba_m.id, "345")
+        ba_m = BaseModel("12", id="112", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(ba_m.id, "112")
         self.assertEqual(ba_m.created_at, dt)
         self.assertEqual(ba_m.updated_at, dt)
 
@@ -153,7 +153,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
 
     def test_to_dict_contains_added_attrs(self):
         ba_m = BaseModel()
-        ba_m.name = "Holberton"
+        ba_m.name = "ALX"
         ba_m.my_number = 98
         self.assertIn("name", ba_m.to_dict())
         self.assertIn("my_number", ba_m.to_dict())

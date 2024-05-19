@@ -79,8 +79,8 @@ class TestCity_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        ciy = City(id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(ciy.id, "345")
+        ciy = City(id="112", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(ciy.id, "112")
         self.assertEqual(ciy.created_at, dt)
         self.assertEqual(ciy.updated_at, dt)
 
@@ -155,9 +155,9 @@ class TestCity_to_dict(unittest.TestCase):
 
     def test_to_dict_contains_added_attrs(self):
         ciy = City()
-        ciy.middle_name = "Holberton"
+        ciy.middle_name = "ALX"
         ciy.my_number = 98
-        self.assertEqual("Holberton", ciy.middle_name)
+        self.assertEqual("ALX", ciy.middle_name)
         self.assertIn("my_number", ciy.to_dict())
 
     def test_to_dict_datetime_attrs_are_strs(self):

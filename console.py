@@ -32,7 +32,7 @@ def pd(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the HolbertonBnB cmd interpreter.
+    """Defines the ALXBnB cmd interpreter.
     attrs:
         prompt (str): The cmd prompt.
     """

@@ -85,8 +85,8 @@ class TestReview_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        rev = Review(id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(rev.id, "345")
+        rev = Review(id="112", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(rev.id, "112")
         self.assertEqual(rev.created_at, dt)
         self.assertEqual(rev.updated_at, dt)
 
@@ -161,9 +161,9 @@ class TestReview_to_dict(unittest.TestCase):
 
     def test_to_dict_contains_added_attrs(self):
         rev = Review()
-        rev.middle_name = "Holberton"
+        rev.middle_name = "ALX"
         rev.my_number = 98
-        self.assertEqual("Holberton", rev.middle_name)
+        self.assertEqual("ALX", rev.middle_name)
         self.assertIn("my_number", rev.to_dict())
 
     def test_to_dict_datetime_attrs_are_strs(self):
