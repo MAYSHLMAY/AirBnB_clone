@@ -1,9 +1,12 @@
-footer {
-	height: 60px;
-	position: fixed;
-	display: grid;
-	place-content: center;
-	background-color: green;
-	inset: 0px;
-	top: unset;
+/* Footer style */
+
+footer{
+    background-color: #00FF00;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    bottom: 0;
+	text-align: center;
+	line-height: 30px;
 }
